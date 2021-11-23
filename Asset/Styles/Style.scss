@@ -1,0 +1,108 @@
+@import "colors";
+@import 'sizes';
+@import "fonts";
+@import "mixins/responsive";
+
+@import "card";
+@import "city-temperature";
+@import "margin";
+@import 'search';
+@import "text";
+
+
+$container-padding: $padding;
+$totalInfo-current-temp-color: $primary-text-color;
+$weather-shape-size: 20rem;
+
+html {
+  font-size: 62.5%;
+  font-family: 'proxima-light';
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+h1, h2, h3, h4, h5, h6, strong, b {
+  font-family: 'proxima-bold';
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+figure {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+.container {
+  background: rgb(58, 141, 205);
+  background: radial-gradient(circle, rgba(58, 141, 205, 1) 0%, rgba(66, 160, 229, 1) 40%, rgba(1, 30, 83, 1) 100%);
+  min-height: 100vh;
+}
+
+.wrapper {
+  margin: auto;
+  max-width: 1200px;
+  padding: $container-padding;
+}
+
+input {
+  font-size: 1.8rem;
+}
+
+.totalInfo {
+  display: flex;
+  flex-direction: column;
+
+  //@media screen and (min-width: 768px){
+  // flex-direction: row;
+  //}
+  @include tablet-desktop {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  &__current-temp {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 5rem;
+    color: $totalInfo-current-temp-color;
+
+  }
+}
+
+.weather-shape {
+  box-sizing: border-box;
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  color: $primary-text-color;
+
+  &__icon {
+    width: $weather-shape-size;
+  }
+
+  @include just-miniMobile {
+    margin-bottom: 24px;
+    width: 25rem;
+  }
+
+  @include just-mobile {
+    margin-bottom: 24px;
+  }
+
+  &__description {
+    font-size: 3rem;
+  }
+}

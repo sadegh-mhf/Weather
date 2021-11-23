@@ -1,0 +1,68 @@
+$day-time-color: $primary-text-color;
+$day-temp-color: $secondary-text-color;
+
+.cards__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  justify-content: space-between;
+
+  @include just-mobile {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  @include just-tablet {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  @include just-desktop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+
+.card {
+  background-color: rgba(123, 192, 192, 0.65);
+  border-radius: $border-radius * 2;
+  box-sizing: border-box;
+  padding: 1.5rem;
+  @include just-miniMobile {
+    width: 100%;
+  }
+
+  @include just-mobile {
+    width: 47%;
+  }
+
+  @include tablet-desktop {
+    width: 23%;
+  }
+
+  &--shadow {
+    @extend .card;
+    box-shadow: 0 10px 15px 2px rgba(#000, 0.1);
+  }
+
+  &__icon {
+    margin: 0 auto;
+    width: 12rem;
+    color: gold;
+  }
+
+  &__day-time {
+    @include font('regular');
+    color: $day-time-color;
+    font-size: 2.6rem;
+  }
+
+  &__days-temp {
+    color: $day-temp-color;
+    font-size: 2rem;
+  }
+}

@@ -1,0 +1,37 @@
+$font-url: '../Fonts';
+$font-directory: 'Proxima';
+$font-name: 'Proxima';
+$font-type: 'otf';
+$font-format: 'opentype';
+
+
+@font-face {
+  font-family: '#{$font-directory}-regular';
+  src: url("#{$font-url}/#{$font-directory}/#{$font-name}.#{$font-type}") format($font-format);
+}
+
+@font-face {
+  font-family: '#{$font-directory}-bold';
+  src: url("#{$font-url}/#{$font-directory}/#{$font-name}Bold.#{$font-type}") format($font-format);
+}
+
+@font-face {
+  font-family: '#{$font-directory}-light';
+  src: url("#{$font-url}/#{$font-directory}/#{$font-name}Light.#{$font-type}") format($font-format);
+}
+
+@mixin font($type: 'light') {
+  font-family: '#{$font-directory}-#{$type}' !important;
+}
+
+.font-light {
+  font-family: '#{$font-directory}-light' !important;
+}
+
+.font-bold {
+  font-family: '#{$font-directory}-bold' !important;
+}
+
+.font-regular {
+  font-family: '#{$font-directory}-regular' !important;
+}

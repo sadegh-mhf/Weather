@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>Weather</title>
+    <link href="./Asset/Styles/normalize.css" rel="stylesheet"/>
+    <link href="Asset/Styles/Style.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+</head>
+<body>
+<main class="container">
+    <div class="wrapper">
+        <div class="search margin-bottom-24">
+            <input class="search__input " id="search" type="search" autocomplete="off" placeholder="Search your favourite city here"
+                   oninput="handleInputChange(event)" onblur="handleInputBlur()" onfocus="handleInputFocus()"/>
+            <div class="search__suggestion "></div>
+        </div>
+        <div class="totalInfo margin-bottom-32">
+            <article class="city-temperature">
+                <h1 class="city-temperature__title">Dubai, AE</h1>
+                <span class="city-temperature__current-day font-regular">Thursday</span>
+                <ul class="margin-top-16">
+                    <li class="info">
+                        <figure class="info__icon margin-right-32">
+                            <img src="./Asset/Images/humidity.png" alt="">
+                        </figure>
+                        <span class="info__description humidity">39%</span>
+                    </li>
+                    <li class="info">
+                        <figure class="info__icon margin-right-32">
+                            <img src="./Asset/Images/wind.png" alt="">
+                        </figure>
+                        <span class="info__description wind">West, 7.7 m/s</span>
+                    </li>
+                    <li class="info">
+                        <figure class="info__icon margin-right-32">
+                            <img src="./Asset/Images/atmospheric%20(1).png" alt="">
+                        </figure>
+                        <span class="info__description pressure">1003 hPa</span>
+                    </li>
+                </ul>
+            </article>
+            <figure class="weather-shape text-center">
+                <img class="weather-shape__icon" src="https://openweathermap.org/img/wn/02d@4x.png">
+                <span class="weather-shape__description font-regular">overcast cloud</span>
+            </figure>
+            <div class=" totalInfo__current-temp font-bold">37 °C</div>
+        </div>
+        <section>
+            <ul class="cards__wrapper">
+                <li class="card--shadow">
+                    <figure class="card__icon">
+                        <img id="day1-icon" src="https://openweathermap.org/img/wn/02d@4x.png">
+                    </figure>
+                    <div class="card__day-time text-center margin-bottom-24" id="day1-date">Friday</div>
+                    <div class="card__days-temp text-center" id="day1-temp">+36 °C</div>
+                </li>
+                <li class="card--shadow">
+                    <figure class="card__icon">
+                        <img id="day2-icon" src="https://openweathermap.org/img/wn/02d@4x.png">
+                    </figure>
+                    <div class="card__day-time text-center margin-bottom-24" id="day2-date">Friday</div>
+                    <div class="card__days-temp text-center" id="day2-temp">+36 °C</div>
+                </li>
+                <li class="card--shadow">
+                    <figure class="card__icon">
+                        <img id="day3-icon" src="https://openweathermap.org/img/wn/02d@4x.png">
+                    </figure>
+                    <div class="card__day-time text-center margin-bottom-24" id="day3-date">Friday</div>
+                    <div class="card__days-temp text-center" id="day3-temp">+36 °C</div>
+                </li>
+                <li class="card--shadow">
+                    <figure class="card__icon">
+                        <img id="day4-icon" src="https://openweathermap.org/img/wn/02d@4x.png">
+                    </figure>
+                    <div class="card__day-time text-center margin-bottom-24" id="day4-date">Friday</div>
+                    <div class="card__days-temp text-center" id="day4-temp">+36 °C</div>
+                </li>
+
+            </ul>
+        </section>
+    </div>
+
+    <script src="Asset/js/Main.js"></script>
+
+</main>
+</body>
+</html>
